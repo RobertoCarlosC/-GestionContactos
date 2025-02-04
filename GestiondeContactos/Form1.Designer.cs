@@ -36,11 +36,11 @@
             // 
             // btnAñadir
             // 
-            btnAñadir.Location = new Point(109, 69);
+            btnAñadir.Location = new Point(132, 69);
             btnAñadir.Name = "btnAñadir";
             btnAñadir.Size = new Size(170, 59);
             btnAñadir.TabIndex = 0;
-            btnAñadir.Text = "button1";
+            btnAñadir.Text = "Añadir Contacto";
             btnAñadir.UseVisualStyleBackColor = true;
             btnAñadir.Click += btnAñadir_Click;
             // 
@@ -50,8 +50,9 @@
             btnEliminarContacto.Name = "btnEliminarContacto";
             btnEliminarContacto.Size = new Size(170, 59);
             btnEliminarContacto.TabIndex = 1;
-            btnEliminarContacto.Text = "button2";
+            btnEliminarContacto.Text = "Eliminar Contacto";
             btnEliminarContacto.UseVisualStyleBackColor = true;
+            btnEliminarContacto.Click += btnEliminarContacto_Click;
             // 
             // btnModificarTelefono
             // 
@@ -59,17 +60,18 @@
             btnModificarTelefono.Name = "btnModificarTelefono";
             btnModificarTelefono.Size = new Size(170, 59);
             btnModificarTelefono.TabIndex = 2;
-            btnModificarTelefono.Text = "button3";
+            btnModificarTelefono.Text = "Modificar Telefono";
             btnModificarTelefono.UseVisualStyleBackColor = true;
             // 
             // btnMostrarContactos
             // 
-            btnMostrarContactos.Location = new Point(443, 191);
+            btnMostrarContactos.Location = new Point(429, 191);
             btnMostrarContactos.Name = "btnMostrarContactos";
             btnMostrarContactos.Size = new Size(170, 59);
             btnMostrarContactos.TabIndex = 3;
-            btnMostrarContactos.Text = "button4";
+            btnMostrarContactos.Text = "Mostrar Contacto";
             btnMostrarContactos.UseVisualStyleBackColor = true;
+            btnMostrarContactos.Click += btnMostrarContactos_Click;
             // 
             // Form1
             // 
@@ -82,6 +84,7 @@
             Controls.Add(btnAñadir);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
