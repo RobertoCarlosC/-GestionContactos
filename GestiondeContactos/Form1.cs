@@ -54,6 +54,7 @@ namespace GestiondeContactos
                 }
             }
             return verificado;
+            //AAAAAAAAAAAA
         }
 
         bool VerificarVectorLleno(string[] nombre)
