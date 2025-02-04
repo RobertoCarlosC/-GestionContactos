@@ -11,7 +11,7 @@ namespace GestiondeContactos
         {
             InitializeComponent();
         }
-        const int Tam = 4;
+        const int Tam = 10;
 
         string[] nombre = new string[Tam];
         int[] telefono = new int[Tam];
@@ -92,15 +92,15 @@ namespace GestiondeContactos
             }
         }
 
-        string MostrarContactos()
+        string MostrarContactos(string[] nombre, int[] telefono)
         {
             bool hayContactos = false;
-            string testeo = "";
+            string texto = "AGENDA DE CONTACTOS \n";
             for (int i = 0; i < Tam; i++)
             {
                 if (nombre[i] != null)  // Solo muestra contactos existentes
                 {
-                    testeo +=  "Nombre: " + nombre[i] + "\n" + "Telefono: " + telefono[i] + "\n" ;
+                    texto += "Nombre: " + nombre[i] + "  Telefono: " + telefono[i] + "\n";
                     hayContactos = true;
                 }
             }
@@ -110,8 +110,29 @@ namespace GestiondeContactos
                 MessageBox.Show("No hay contactos almacenados.", "Agenda Vacía");
             }
 
-            return testeo;
+            return texto;
 
+        }
+        void ModificarTelefono(string[] nombre, int[] telefono)
+        {
+            bool parar = false;
+            string aux = Interaction.InputBox("Introduce el nombre del contacto qu quieres modificar:");
+            if (VerificarContacto(aux, nombre))
+            {
+                for (int i = 0; i < nombre.Length && !parar; i++)
+                {
+                    if (nombre[i] == aux)
+                    {
+                        telefono[i] = int.Parse(Interaction.InputBox("Introduce el nuevo número de teléfono del contacto"));
+                        parar = true;
+                    }
+                }
+
+            }
+            if (parar)
+            {
+                MessageBox.Show("El numero se ha editado correctamente");
+            }
         }
 
 
@@ -127,12 +148,17 @@ namespace GestiondeContactos
 
         private void btnEliminarContacto_Click(object sender, EventArgs e)
         {
-            EliminarContacto(nombre, telefono);
+            EliminarContacto(nombre, telefono);/* Adrian Carbonell*/
         }
 
         private void btnMostrarContactos_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(MostrarContactos());
+            MessageBox.Show(MostrarContactos(nombre, telefono));/*Roberto Carlos*/
+        }
+
+        private void btnModificarTelefono_Click(object sender, EventArgs e)
+        {
+            ModificarTelefono(nombre, telefono); /*Roberto Carlos*/
         }
     }
 }

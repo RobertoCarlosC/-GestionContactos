@@ -62,6 +62,7 @@
             btnModificarTelefono.TabIndex = 2;
             btnModificarTelefono.Text = "Modificar Telefono";
             btnModificarTelefono.UseVisualStyleBackColor = true;
+            btnModificarTelefono.Click += btnModificarTelefono_Click;
             // 
             // btnMostrarContactos
             // 
